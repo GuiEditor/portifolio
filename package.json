@@ -2,24 +2,31 @@
   "name": "portfolio_gui",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://GuiEditor.github.io/portifolio",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
+    "alpine": "^0.2.1",
+    "firebase": "^10.5.0",
+    "next": "latest",
     "react": "latest",
     "react-dom": "latest",
-    "next": "latest"
+    "react-player": "^2.13.0",
+    "react-router-dom": "^6.16.0"
   },
   "devDependencies": {
-    "typescript": "latest",
-    "@types/react": "latest",
     "@types/node": "latest",
+    "@types/react": "latest",
     "@types/react-dom": "latest",
     "autoprefixer": "latest",
+    "gh-pages": "^6.1.0",
     "postcss": "latest",
-    "tailwindcss": "latest"
+    "tailwindcss": "latest",
+    "typescript": "latest"
   }
 }

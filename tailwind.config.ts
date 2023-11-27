@@ -1,4 +1,5 @@
 import type { Config } from 'tailwindcss'
+import defaultTheme from 'tailwindcss/defaultTheme'
 
 const config: Config = {
   content: [
@@ -8,11 +9,25 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        '2xsm': '350px',
+        'xsm': '500px',
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
+      colors: {
+        'purpledeep': '#17002e'
+      },
+      fontFamily: {
+        'sans':['"Komika"', ...defaultTheme.fontFamily.sans],
+        'serif': ['"Komika Display"', ...defaultTheme.fontFamily.serif]
+      },
+      height: {
+        '128': '34rem'
+      }
     },
   },
   plugins: [],
