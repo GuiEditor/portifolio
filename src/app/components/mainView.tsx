@@ -4,6 +4,8 @@ import React, { useCallback, useEffect, useState } from "react";
 
 export default function MainView() {
     const [images, setImages] = useState();
+    const config = require('../../../next.config');
+    console.log(config.basePath)
 
     const getImagesFromStorage = useCallback(() => {}, [])
     const slide = [
@@ -32,7 +34,7 @@ export default function MainView() {
     return (
         <main>
             <section id='section1' className='bg-gray-50 flex flex-col'>
-                <img className='w-screen 2xsm:h-[200px] lg:h-screen' src='/carro.gif' />
+                <img className='w-screen 2xsm:h-[200px] lg:h-screen' src={`${config.basePath}/carro.gif`} />
             </section>
 
             <section className="bg-purpledeep flex flex-col items-center" id="section2">
