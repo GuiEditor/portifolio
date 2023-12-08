@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 
 const nextConfig = {
-    basePath: '',
+    basePath: '/portifolio',
     output: "export",
     distDir: "dist",
     images: {
