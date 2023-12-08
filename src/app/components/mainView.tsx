@@ -50,7 +50,7 @@ export default function MainView() {
             <section id='section1'>
                 <div className='flex flex-row items-center justify-around'>
                     <img className='w-screen 2xsm:h-[200px] lg:h-screen z-0' src={`${config.basePath}/foto_inicial.png`} />
-                    <div className="absolute z-50 w-[800px] h-[400px] mr-20 flex flex-row right-1">
+                    <div className="absolute z-30 w-[800px] h-[400px] mr-20 flex flex-row right-1">
                         <div className="flex flex-col">
                             <span className='text-white font-sans '>Trabalho</span>
                             <span className='text-white w-96 font-serif text-lg'>
