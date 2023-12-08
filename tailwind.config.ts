@@ -19,11 +19,12 @@ const config: Config = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       colors: {
-        'purpledeep': '#17002e'
+        'purpledeep': '#17002e',
+        'purpledeep-2': '#2D1647'
       },
       fontFamily: {
-        'sans':['"Komika"', ...defaultTheme.fontFamily.sans],
-        'serif': ['"Komika Display"', ...defaultTheme.fontFamily.serif]
+        'sans':['"Anton"', ...defaultTheme.fontFamily.sans],
+        'serif': ['"Lato"', ...defaultTheme.fontFamily.serif]
       },
       height: {
         '128': '34rem'

@@ -17,7 +17,7 @@ export default function Carousel({images}: CarouselProps) {
 
 
     return (
-        <div className="max-w-[800px] 2xsm:h-[220px] xsm:h-[300px] sm:h-[400px] md:h-[400px] w-full m-auto px-4 relative group mb-12">
+        <div className="max-w-[600px] 2xsm:h-[220px] xsm:h-[300px] sm:h-[400px] md:h-[400px] w-full m-auto px-4 relative group mb-12">
             {/* <div className="w-full h-full shadow-xl rounded-xl bg-center bg-cover duration-500">
                 <ReactPlayer
                     url={images[currentIndex].img}
@@ -27,7 +27,7 @@ export default function Carousel({images}: CarouselProps) {
                     height="300px"
                 />
             </div> */}
-            <video className="w-full 2xsm:h-[220px] xsm:h-[300px] sm:h-[400px] md:h-[400px] shadow-xl rounded-xl bg-center bg-cover duration-500" controls>
+            <video className="w-full 2xsm:h-[120px] xsm:h-[120px] sm:h-[200px] md:h-[300px] shadow-xl rounded-xl bg-center bg-cover duration-500" controls>
                 <source src={images[currentIndex].img} type="video/mp4"/>
             </video>
             {/* Seta para esquerda */}

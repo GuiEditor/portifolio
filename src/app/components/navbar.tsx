@@ -16,11 +16,11 @@ export default function NavBarComponent() {
     }
 
     return (
-        <nav>
+        <nav className='bg-purpledeep-2 top-0 z-50 w-full fixed'>
             <div className="max-w-4xl flex items-center justify-center mx-auto p-3">
-                <button className={`${isClicked == 1 ? 'bg-gray-400 duration-300 rounded shadow p-2 mr-3 ml-3' : 'p-2 mr-3 ml-3 transition transform ease-in hover:translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none'}`} onClick={() => changeClick(1)}>Início</button>
-                <button className={`${isClicked == 2 ? 'bg-gray-400 duration-300 rounded shadow p-2 mr-3 ml-3' : 'p-2 mr-3 ml-3 transition transform ease-in hover:translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none'}`} onClick={() => changeClick(2)}>Trabalhos</button>
-                <button className={`${isClicked == 3 ? 'bg-gray-400 duration-300 rounded shadow p-2 mr-6' : 'p-2 mr-6 transition transform ease-in hover:translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none'}`} onClick={() => changeClick(3)}>Contato</button>
+                <button className={`${isClicked == 1 ? 'bg-purpledeep text-xl font-serif text-white duration-300 rounded shadow p-2 mr-3 ml-3' : 'p-2 text-xl font-serif text-white mr-3 ml-3 transition transform ease-in hover:translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none'}`} onClick={() => changeClick(1)}>Início</button>
+                <button className={`${isClicked == 2 ? 'bg-purpledeep text-xl font-serif text-white duration-300 rounded shadow p-2 mr-3 ml-3' : 'p-2 text-xl font-serif text-white mr-3 ml-3 transition transform ease-in hover:translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none'}`} onClick={() => changeClick(2)}>Trabalhos</button>
+                <button className={`${isClicked == 3 ? 'bg-purpledeep text-xl font-serif text-white duration-300 rounded shadow p-2 mr-6' : 'p-2 text-xl font-serif text-white mr-6 transition transform ease-in hover:translate-y-1 motion-reduce:transition-none motion-reduce:hover:transform-none'}`} onClick={() => changeClick(3)}>Contato</button>
             </div>
         </nav>
     );

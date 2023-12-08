@@ -7,11 +7,12 @@ export default function MainView() {
     const config = require('../../../next.config');
     console.log(config.basePath)
 
-    const getImagesFromStorage = useCallback(() => {}, [])
+    const getImagesFromStorage = useCallback(() => { }, [])
     const slide = [
         {
             id: '1',
             title: "Apresentação",
+            subtitle: "Este vídeo é mais do que uma apresentação de uma moto; é uma celebração da paixão por veículos. Com uma edição meticulosa e trilha sonora envolvente, levamos você a uma jornada visual que transcende a simples apresentação de uma moto. Cada take foi cuidadosamente selecionado para destacar os detalhes e a beleza singular da BMW R 1250 GS Adventure Premium Exclusive. A trilha sonora especialmente escolhida não apenas acompanha visualmente o vídeo, mas também amplifica a emoção de possuir e pilotar uma BMW R 1250 GS Adventure Premium Exclusivet.",
             images: [
                 {
                     img: "https://firebasestorage.googleapis.com/v0/b/portfolio-9b4f7.appspot.com/o/Apresenta%C3%A7%C3%A3o%2FApresenta%C3%A7%C3%A3o.mp4?alt=media&token=17fc4ae8-eb78-43d7-a861-66d839273841"
@@ -21,6 +22,17 @@ export default function MainView() {
         {
             id: '2',
             title: "Automóveis",
+            subtitle: "Este vídeo é mais do que uma apresentação de uma moto; é uma celebração da paixão por veículos. Com uma edição meticulosa e trilha sonora envolvente, levamos você a uma jornada visual que transcende a simples apresentação de uma moto. Cada take foi cuidadosamente selecionado para destacar os detalhes e a beleza singular da BMW R 1250 GS Adventure Premium Exclusive. A trilha sonora especialmente escolhida não apenas acompanha visualmente o vídeo, mas também amplifica a emoção de possuir e pilotar uma BMW R 1250 GS Adventure Premium Exclusivet.",
+            images: [
+                {
+                    img: "https://firebasestorage.googleapis.com/v0/b/portfolio-9b4f7.appspot.com/o/Autom%C3%B3veis%20de%20Luxo%2FEstetica%20automotiva.mp4?alt=media&token=ec87a7bd-6ca7-4e2f-aae5-65805cc47a4f"
+                },
+            ]
+        },
+        {
+            id: '3',
+            title: "Automóveis",
+            subtitle: "Este vídeo é mais do que uma apresentação de uma moto; é uma celebração da paixão por veículos. Com uma edição meticulosa e trilha sonora envolvente, levamos você a uma jornada visual que transcende a simples apresentação de uma moto. Cada take foi cuidadosamente selecionado para destacar os detalhes e a beleza singular da BMW R 1250 GS Adventure Premium Exclusive. A trilha sonora especialmente escolhida não apenas acompanha visualmente o vídeo, mas também amplifica a emoção de possuir e pilotar uma BMW R 1250 GS Adventure Premium Exclusivet.",
             images: [
                 {
                     img: "https://firebasestorage.googleapis.com/v0/b/portfolio-9b4f7.appspot.com/o/Autom%C3%B3veis%20de%20Luxo%2FEstetica%20automotiva.mp4?alt=media&token=ec87a7bd-6ca7-4e2f-aae5-65805cc47a4f"
@@ -29,35 +41,66 @@ export default function MainView() {
         },
     ];
 
+    const video = "https://firebasestorage.googleapis.com/v0/b/portfolio-9b4f7.appspot.com/o/Autom%C3%B3veis%20de%20Luxo%2FEstetica%20automotiva.mp4?alt=media&token=ec87a7bd-6ca7-4e2f-aae5-65805cc47a4f"
+
     const profile = 'https://firebasestorage.googleapis.com/v0/b/portfolio-9b4f7.appspot.com/o/Perfil%2FWhatsApp%20Image%202023-10-12%20at%2022.38.15.jpeg?alt=media&token=c5e37185-97ad-4899-b064-0e242a51da2a&_gl=1*tug2n8*_ga*ODU1MDQyNjgyLjE2OTU5NjM2MjQ.*_ga_CW55HF8NVT*MTY5NzE1OTg0Mi40LjEuMTY5NzE2MTIyOC40Mi4wLjA.'
 
     return (
         <main>
-            <section id='section1' className='bg-gray-50 flex flex-col'>
-                <img className='w-screen 2xsm:h-[200px] lg:h-screen' src={`${config.basePath}/carro.gif`} />
+            <section id='section1'>
+                <div className='flex flex-row items-center justify-around'>
+                    <img className='w-screen 2xsm:h-[200px] lg:h-screen z-0' src={`${config.basePath}/foto_inicial.png`} />
+                    <div className="absolute z-50 w-[800px] h-[400px] mr-20 flex flex-row right-1">
+                        <div className="flex flex-col">
+                            <span className='text-white font-sans '>Trabalho</span>
+                            <span className='text-white w-96 font-serif text-lg'>
+                                Este vídeo é mais do que uma apresentação de uma moto; é uma celebração da paixão por veículos. Com uma edição meticulosa e trilha sonora envolvente, levamos você a uma jornada visual que transcende a simples apresentação de uma moto. Cada take foi cuidadosamente selecionado para destacar os detalhes e a beleza singular da BMW R 1250 GS Adventure Premium Exclusive. A trilha sonora especialmente escolhida não apenas acompanha visualmente o vídeo, mas também amplifica a emoção de possuir e pilotar uma BMW R 1250 GS Adventure Premium Exclusivet.
+                            </span>
+                        </div>
+                        <video className="w-full 2xsm:h-[120px] xsm:h-[120px] sm:h-[200px] md:h-[300px] shadow-xl rounded-xl bg-center bg-cover duration-500" controls>
+                            <source src={video} type="video/mp4"/>
+                        </video>
+                    </div>
+                </div>
             </section>
 
-            <section className="bg-purpledeep flex flex-col items-center" id="section2">
+            <section className="bg-gradient-to-b from-black to-purpledeep flex flex-col items-center" id="section2">
                 <div className="p-7 mt-12 mb-6">
-                    <p className="text-white text-2xl font-sans">Trabalhos</p>
+                    <p className="text-white text-2xl font-sans">Obras Primas</p>
                 </div>
 
                 {
-                    slide.map((s) => (
-                        <div className="flex flex-col 2xsm:w-[320px] xsm:w-[300px] sm:w-[400px] md:w-[400px] lg:w-[800px] items-center" key={s.id}>
-                            <div className="text-gray-500 text-lg mb-3 font-bold font-serif">{s.title}</div>
-                            <Carousel images={s.images}></Carousel>
-                        </div>
-                    ))
+
+                    slide.map((s) => {
+                        const lastIndex = slide.length - 1;
+                        const lastElement = slide[lastIndex];
+                        return (
+                            <div className='flex flex-col'>
+                                <div className="flex flex-row 2xsm:w-[320px] xsm:w-[300px] sm:w-[400px] md:w-[400px] lg:w-[1200px] items-start gap-16" key={s.id}>
+                                    <div className="flex flex-col w-[500px]">
+                                        <span className='text-gray-500 text-lg mb-3 font-bold font-sans'>
+                                            {s.title}
+                                        </span>
+                                        <span className='text-gray-500 text-lg mb-3 font-bold font-serif'>
+                                            {s.subtitle}
+                                        </span>
+                                    </div>
+                                    <Carousel images={s.images}></Carousel>
+                                </div>
+                                {lastElement != s ? <hr className="border-1 w-full border-white mb-12 mt-12" /> : <div></div>}
+                            </div>
+                            
+                        )
+                    })
                 }
 
             </section>
 
             <section className='bg-purpledeep flex flex-row items-start justify-center p-8' id="section4">
-                <img src={profile} className='w-64 h-64 rounded mr-6'/>
+                <img src={profile} className='w-64 h-64 rounded mr-6' />
 
                 <div className='flex flex-col items-start max-w-3xl'>
-                    <p className='text-3xl font-sans'>
+                    <p className='text-3xl text-gray-300 font-sans'>
                         Guilherme Alcantara
                     </p>
 
@@ -74,7 +117,7 @@ export default function MainView() {
             </section>
 
             <section className="bg-gray-950 flex flex-col items-center pb-8" id="section3">
-                
+
                 <div className="border-b-2 p-7 mb-6">
                     <span className="text-white text-2xl">Contato</span>
                 </div>
