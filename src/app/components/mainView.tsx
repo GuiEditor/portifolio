@@ -51,7 +51,7 @@ export default function MainView() {
                 <div className='flex flex-row items-start justify-around'>
                     <img className='w-screen 2xsm:h-[200px] lg:h-screen z-0' src={`${config.basePath}/foto_inicial.png`} />
                     <div className="absolute z-30 w-[700px] h-[400px] mr-20 flex flex-row right-1">
-                        <video className="2xsm:h-[220px] xsm:h-[220px] sm:h-[300px] md:h-[500px] shadow-xl rounded-xl bg-center bg-cover duration-500 ml-40 mt-40" controls autoPlay>
+                        <video className="2xsm:h-[220px] xsm:h-[220px] sm:h-[300px] md:h-[500px] shadow-xl rounded-xl bg-center bg-cover duration-500 ml-30 mt-40" controls autoPlay>
                             <source id='demo-video' src={demo} type="video/mp4"/>
                         </video>
                     </div>
