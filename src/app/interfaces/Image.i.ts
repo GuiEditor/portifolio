@@ -1,3 +1,3 @@
-export default interface Image {
-    img: string;
+export default interface Video {
+    video: string;
 }

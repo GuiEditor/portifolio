@@ -1,49 +1,25 @@
 'use client';
 import Carousel from '@/app/components/carousel'
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
+import { arrVideo,  listVideosInRoot } from '../config/storageConfig';
+import HTMLReactParser from 'html-react-parser';
 
 export default function MainView() {
-    const [images, setImages] = useState();
+    const [video, setVideo] = useState<arrVideo[] | undefined>([]);
+
+    useEffect(() => {
+        fetch()
+    }, [])
+    
+    async function fetch() {
+        await listVideosInRoot()
+            .then(vd => setVideo(vd))
+    }
+
     const config = require('../../../next.config');
-    console.log(config.basePath)
 
-    const getImagesFromStorage = useCallback(() => { }, [])
-    const slide = [
-        {
-            id: '1',
-            title: "Apresentação",
-            subtitle: "Este vídeo é mais do que uma apresentação de uma moto; é uma celebração da paixão por veículos. Com uma edição meticulosa e trilha sonora envolvente, levamos você a uma jornada visual que transcende a simples apresentação de uma moto. Cada take foi cuidadosamente selecionado para destacar os detalhes e a beleza singular da BMW R 1250 GS Adventure Premium Exclusive. A trilha sonora especialmente escolhida não apenas acompanha visualmente o vídeo, mas também amplifica a emoção de possuir e pilotar uma BMW R 1250 GS Adventure Premium Exclusivet.",
-            images: [
-                {
-                    img: "https://firebasestorage.googleapis.com/v0/b/portfolio-9b4f7.appspot.com/o/Apresenta%C3%A7%C3%A3o%2FApresenta%C3%A7%C3%A3o.mp4?alt=media&token=17fc4ae8-eb78-43d7-a861-66d839273841"
-                },
-            ]
-        },
-        {
-            id: '2',
-            title: "Automóveis",
-            subtitle: "Este vídeo é mais do que uma apresentação de uma moto; é uma celebração da paixão por veículos. Com uma edição meticulosa e trilha sonora envolvente, levamos você a uma jornada visual que transcende a simples apresentação de uma moto. Cada take foi cuidadosamente selecionado para destacar os detalhes e a beleza singular da BMW R 1250 GS Adventure Premium Exclusive. A trilha sonora especialmente escolhida não apenas acompanha visualmente o vídeo, mas também amplifica a emoção de possuir e pilotar uma BMW R 1250 GS Adventure Premium Exclusivet.",
-            images: [
-                {
-                    img: "https://firebasestorage.googleapis.com/v0/b/portfolio-9b4f7.appspot.com/o/Autom%C3%B3veis%20de%20Luxo%2FEstetica%20automotiva.mp4?alt=media&token=ec87a7bd-6ca7-4e2f-aae5-65805cc47a4f"
-                },
-            ]
-        },
-        {
-            id: '3',
-            title: "Automóveis",
-            subtitle: "Este vídeo é mais do que uma apresentação de uma moto; é uma celebração da paixão por veículos. Com uma edição meticulosa e trilha sonora envolvente, levamos você a uma jornada visual que transcende a simples apresentação de uma moto. Cada take foi cuidadosamente selecionado para destacar os detalhes e a beleza singular da BMW R 1250 GS Adventure Premium Exclusive. A trilha sonora especialmente escolhida não apenas acompanha visualmente o vídeo, mas também amplifica a emoção de possuir e pilotar uma BMW R 1250 GS Adventure Premium Exclusivet.",
-            images: [
-                {
-                    img: "https://firebasestorage.googleapis.com/v0/b/portfolio-9b4f7.appspot.com/o/Autom%C3%B3veis%20de%20Luxo%2FEstetica%20automotiva.mp4?alt=media&token=ec87a7bd-6ca7-4e2f-aae5-65805cc47a4f"
-                },
-            ]
-        },
-    ];
-
-    const video = "https://firebasestorage.googleapis.com/v0/b/portfolio-9b4f7.appspot.com/o/Autom%C3%B3veis%20de%20Luxo%2FEstetica%20automotiva.mp4?alt=media&token=ec87a7bd-6ca7-4e2f-aae5-65805cc47a4f"
-
-    const profile = 'https://firebasestorage.googleapis.com/v0/b/portfolio-9b4f7.appspot.com/o/Perfil%2FWhatsApp%20Image%202023-10-12%20at%2022.38.15.jpeg?alt=media&token=c5e37185-97ad-4899-b064-0e242a51da2a&_gl=1*tug2n8*_ga*ODU1MDQyNjgyLjE2OTU5NjM2MjQ.*_ga_CW55HF8NVT*MTY5NzE1OTg0Mi40LjEuMTY5NzE2MTIyOC40Mi4wLjA.'
+    const profile = 'https://firebasestorage.googleapis.com/v0/b/portfolio-9b4f7.appspot.com/o/perfil%2Feu.jpg?alt=media&token=a3d4ce4f-83e1-48ca-9868-b3d9f06b68c1'
+    const demo = "https://firebasestorage.googleapis.com/v0/b/portfolio-9b4f7.appspot.com/o/DEMO%2FDemo%20reel%20pára%20site.mp4?alt=media&token=a3b89e00-0a1e-4ec6-a270-33c669317354"
 
     return (
         <main>
@@ -51,14 +27,14 @@ export default function MainView() {
                 <div className='flex flex-row items-center justify-around'>
                     <img className='w-screen 2xsm:h-[200px] lg:h-screen z-0' src={`${config.basePath}/foto_inicial.png`} />
                     <div className="absolute z-30 w-[800px] h-[400px] mr-20 flex flex-row right-1">
-                        <div className="flex flex-col">
+                        <div className="flex flex-col mr-10">
                             <span className='text-white font-sans '>Trabalho</span>
                             <span className='text-white w-96 font-serif text-lg'>
                                 Este vídeo é mais do que uma apresentação de uma moto; é uma celebração da paixão por veículos. Com uma edição meticulosa e trilha sonora envolvente, levamos você a uma jornada visual que transcende a simples apresentação de uma moto. Cada take foi cuidadosamente selecionado para destacar os detalhes e a beleza singular da BMW R 1250 GS Adventure Premium Exclusive. A trilha sonora especialmente escolhida não apenas acompanha visualmente o vídeo, mas também amplifica a emoção de possuir e pilotar uma BMW R 1250 GS Adventure Premium Exclusivet.
                             </span>
                         </div>
-                        <video className="w-full 2xsm:h-[120px] xsm:h-[120px] sm:h-[200px] md:h-[300px] shadow-xl rounded-xl bg-center bg-cover duration-500" controls>
-                            <source src={video} type="video/mp4"/>
+                        <video className="w-full 2xsm:h-[120px] xsm:h-[120px] sm:h-[200px] md:h-[300px] shadow-xl rounded-xl bg-center bg-cover duration-500" controls autoPlay>
+                            <source id='demo-video' src={demo} type="video/mp4"/>
                         </video>
                     </div>
                 </div>
@@ -70,22 +46,43 @@ export default function MainView() {
                 </div>
 
                 {
-
-                    slide.map((s) => {
-                        const lastIndex = slide.length - 1;
-                        const lastElement = slide[lastIndex];
+                    
+                    video?.sort().map((s, i) => {
+                        const lastIndex = video.length - 1;
+                        const id = i + 1;
+                        const lastElement = video[lastIndex];
+                        const subtitleList = [
+                            {
+                                subtitle: `"Assista ao trailer agora para uma prévia de um curta-metragem no qual eu realizei a captação de imagens e a direção de fotografia. Foquei em fazer takes dinâmicos, explorando diferentes ângulos e variando na intenção que eu quis que o telespectador sentisse. O curta-metragem completo está disponível para visualização no YouTube, proporcionando uma experiência completa. <a className='hover:text-blue-400' href="https://www.youtube.com/watch?v=JCcQpddQmDY&ab_channel=KoldrainFilm">https://www.youtube.com/watch?v=JCcQpddQmDY&ab_channel=KoldrainFilm</a>`,
+                            },
+                            {
+                                subtitle: 'Este trecho é parte da edição que realizei para meu cliente que reside na Flórida. Sua filha veio do Brasil para visitá-lo, e ele fez algumas captações, pedindo-me para tornar o vídeo dinâmico e adicionar a tradução da música como legenda. Este é apenas um fragmento do vídeo, mas oferece uma visão do meu estilo de edição, onde busco capturar a essência única de momentos especiais.',
+                            },
+                            {
+                                subtitle: 'Este vídeo é uma celebração da diversidade do evento de audiovisual que frequentei em 2023, a Filmecon. O evento contou com ótimas palestras, dicas, sorteios e bastante networking com a galera do audiovisual. A captação foi pessoal, revelando não apenas as palestras, mas também momentos efervescentes de interação. Jogos de cartas, pessoas capturando outras pessoas, delícias gastronômicas e o fascinante Spinner 360 graus são alguns dos destaques que dão vida a esta jornada visual.',
+                            },
+                            {
+                                subtitle: 'Este vídeo é mais do que uma apresentação de uma moto; é uma celebração da paixão por veículos. Com uma edição meticulosa e trilha sonora envolvente, levamos você a uma jornada visual que transcende a simples apresentação de uma moto. Cada take foi cuidadosamente selecionado para destacar os detalhes e a beleza singular da BMW R 1250 GS Adventure Premium Exclusive. A trilha sonora especialmente escolhida não apenas acompanha visualmente o vídeo, mas também amplifica a emoção de possuir e pilotar uma BMW R 1250 GS Adventure Premium Exclusivet.',
+                            },
+                            {
+                                subtitle: 'Este vídeo foi feito com captação e edição realizadas por mim, mostrando o resultado transformador alcançado por uma empresa de pintura de alto padrão no banheiro de um apartamento na Barra da Tijuca. Busquei tornar o vídeo dinâmico, com variações de ângulos, para uma apresentação mais impactante da obra.',
+                            },
+                            {
+                                subtitle: '"Assista ao trailer agora para uma prévia de um curta-metragem no qual eu realizei a captação de imagens e a direção de fotografia. Foquei em fazer takes dinâmicos, explorando diferentes ângulos e variando na intenção que eu quis que o telespectador sentisse. O curta-metragem completo está disponível para visualização no YouTube, proporcionando uma experiência completa. <a href="https://www.youtube.com/watch?v=JCcQpddQmDY&ab_channel=KoldrainFilm">https://www.youtube.com/watch?v=JCcQpddQmDY&ab_channel=KoldrainFilm</a>',
+                            },
+                        ]
                         return (
                             <div className='flex flex-col'>
-                                <div className="flex flex-row 2xsm:w-[320px] xsm:w-[300px] sm:w-[400px] md:w-[400px] lg:w-[1200px] items-start gap-16" key={s.id}>
+                                <div className="flex flex-row 2xsm:w-[320px] xsm:w-[300px] sm:w-[400px] md:w-[400px] lg:w-[1200px] items-start gap-16" key={id}>
                                     <div className="flex flex-col w-[500px]">
                                         <span className='text-gray-500 text-lg mb-3 font-bold font-sans'>
-                                            {s.title}
+                                            {s.filename}
                                         </span>
                                         <span className='text-gray-500 text-lg mb-3 font-bold font-serif'>
-                                            {s.subtitle}
+                                            {HTMLReactParser(subtitleList[i].subtitle)}
                                         </span>
                                     </div>
-                                    <Carousel images={s.images}></Carousel>
+                                    <Carousel video={s.url}></Carousel>
                                 </div>
                                 {lastElement != s ? <hr className="border-1 w-full border-white mb-12 mt-12" /> : <div></div>}
                             </div>

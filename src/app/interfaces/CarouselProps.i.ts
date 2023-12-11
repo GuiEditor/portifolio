@@ -1,6 +1,6 @@
 
-import Image from "./Image.i";
+import Video from "./Image.i";
 
 export default interface CarouselProps {
-    images: Image[]
+    video: Video
 }
