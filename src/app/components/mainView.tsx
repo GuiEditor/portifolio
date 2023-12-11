@@ -8,18 +8,42 @@ export default function MainView() {
     const [video, setVideo] = useState<arrVideo[] | undefined>([]);
 
     useEffect(() => {
-        fetch()
-    }, [])
-    
-    async function fetch() {
-        await listVideosInRoot()
+        listVideosInRoot()
             .then(vd => setVideo(vd))
-    }
+    }, [video])
 
     const config = require('../../../next.config');
 
     const profile = 'https://firebasestorage.googleapis.com/v0/b/portfolio-9b4f7.appspot.com/o/perfil%2Feu.jpg?alt=media&token=a3d4ce4f-83e1-48ca-9868-b3d9f06b68c1'
     const demo = "https://firebasestorage.googleapis.com/v0/b/portfolio-9b4f7.appspot.com/o/DEMO%2FDemo%20reel%20pára%20site.mp4?alt=media&token=a3b89e00-0a1e-4ec6-a270-33c669317354"
+
+    const subtitleList = [
+        {
+            title: "Captação + Edição de vídeo para concessionária",
+            subtitle: 'Este vídeo é mais do que uma apresentação de uma moto; é uma celebração da paixão por veículos. Com uma edição meticulosa e trilha sonora envolvente, levamos você a uma jornada visual que transcende a simples apresentação de uma moto. Cada take foi cuidadosamente selecionado para destacar os detalhes e a beleza singular da BMW R 1250 GS Adventure Premium Exclusive. A trilha sonora especialmente escolhida não apenas acompanha visualmente o vídeo, mas também amplifica a emoção de possuir e pilotar uma BMW R 1250 GS Adventure Premium Exclusivet.',
+            url: 'https://firebasestorage.googleapis.com/v0/b/portfolio-9b4f7.appspot.com/o/Captação%20%2B%20Edição%20de%20vídeo%20para%20concessionária.mp4?alt=media&token=6dc7078b-a8cb-425a-a455-5459c0edc63a'
+        },
+        {
+            title: "Captação + edição pessoal de evento",
+            subtitle: 'Este vídeo é uma celebração da diversidade do evento de audiovisual que frequentei em 2023, a Filmecon. O evento contou com ótimas palestras, dicas, sorteios e bastante networking com a galera do audiovisual. A captação foi pessoal, revelando não apenas as palestras, mas também momentos efervescentes de interação. Jogos de cartas, pessoas capturando outras pessoas, delícias gastronômicas e o fascinante Spinner 360 graus são alguns dos destaques que dão vida a esta jornada visual.',
+            url: 'https://firebasestorage.googleapis.com/v0/b/portfolio-9b4f7.appspot.com/o/Captação%20%2B%20edição%20pessoal%20de%20evento.mp4?alt=media&token=e798b4aa-23af-4fa0-9314-779f07277bb9'
+        },
+        {
+            title: "Captação de curta metragem",
+            subtitle: `"Assista ao trailer agora para uma prévia de um curta-metragem no qual eu realizei a captação de imagens e a direção de fotografia. Foquei em fazer takes dinâmicos, explorando diferentes ângulos e variando na intenção que eu quis que o telespectador sentisse. O curta-metragem completo está disponível para visualização no YouTube, proporcionando uma experiência completa. <a className='hover:text-blue-400' href="https://www.youtube.com/watch?v=JCcQpddQmDY&ab_channel=KoldrainFilm">https://www.youtube.com/watch?v=JCcQpddQmDY&ab_channel=KoldrainFilm</a>`,
+            url: "https://firebasestorage.googleapis.com/v0/b/portfolio-9b4f7.appspot.com/o/Captação%20de%20curta%20metragem.mp4?alt=media&token=056cbdde-0cc7-4fc2-a56e-1d7665d073e7"
+        },
+        {
+            title: "Captação + edição de pintura de alto padrão",
+            subtitle: 'Este vídeo foi feito com captação e edição realizadas por mim, mostrando o resultado transformador alcançado por uma empresa de pintura de alto padrão no banheiro de um apartamento na Barra da Tijuca. Busquei tornar o vídeo dinâmico, com variações de ângulos, para uma apresentação mais impactante da obra.',
+            url: 'https://firebasestorage.googleapis.com/v0/b/portfolio-9b4f7.appspot.com/o/Captação%20%2B%20edição%20de%20pintura%20de%20alto%20padrão.mp4?alt=media&token=5c2b05c2-a165-48cf-89c9-9a0fcddafb2e'
+        },
+        {
+            title: "Edição de uma viagem marcante na Flórida",
+            subtitle: 'Este trecho é parte da edição que realizei para meu cliente que reside na Flórida. Sua filha veio do Brasil para visitá-lo, e ele fez algumas captações, pedindo-me para tornar o vídeo dinâmico e adicionar a tradução da música como legenda. Este é apenas um fragmento do vídeo, mas oferece uma visão do meu estilo de edição, onde busco capturar a essência única de momentos especiais.',
+            url: 'https://firebasestorage.googleapis.com/v0/b/portfolio-9b4f7.appspot.com/o/Edição%20de%20uma%20viagem%20marcante%20na%20Flórida.mp4?alt=media&token=c17de797-669e-41d7-a713-c3a09aba63f0'
+        },
+    ];
 
     return (
         <main>
@@ -46,37 +70,17 @@ export default function MainView() {
                 </div>
 
                 {
-                    
-                    video?.sort().map((s, i) => {
-                        const lastIndex = video.length - 1;
+                    subtitleList?.map((s, i) => {
+                        const lastIndex = subtitleList.length - 1;
                         const id = i + 1;
-                        const lastElement = video[lastIndex];
-                        const subtitleList = [
-                            {
-                                subtitle: `"Assista ao trailer agora para uma prévia de um curta-metragem no qual eu realizei a captação de imagens e a direção de fotografia. Foquei em fazer takes dinâmicos, explorando diferentes ângulos e variando na intenção que eu quis que o telespectador sentisse. O curta-metragem completo está disponível para visualização no YouTube, proporcionando uma experiência completa. <a className='hover:text-blue-400' href="https://www.youtube.com/watch?v=JCcQpddQmDY&ab_channel=KoldrainFilm">https://www.youtube.com/watch?v=JCcQpddQmDY&ab_channel=KoldrainFilm</a>`,
-                            },
-                            {
-                                subtitle: 'Este trecho é parte da edição que realizei para meu cliente que reside na Flórida. Sua filha veio do Brasil para visitá-lo, e ele fez algumas captações, pedindo-me para tornar o vídeo dinâmico e adicionar a tradução da música como legenda. Este é apenas um fragmento do vídeo, mas oferece uma visão do meu estilo de edição, onde busco capturar a essência única de momentos especiais.',
-                            },
-                            {
-                                subtitle: 'Este vídeo é uma celebração da diversidade do evento de audiovisual que frequentei em 2023, a Filmecon. O evento contou com ótimas palestras, dicas, sorteios e bastante networking com a galera do audiovisual. A captação foi pessoal, revelando não apenas as palestras, mas também momentos efervescentes de interação. Jogos de cartas, pessoas capturando outras pessoas, delícias gastronômicas e o fascinante Spinner 360 graus são alguns dos destaques que dão vida a esta jornada visual.',
-                            },
-                            {
-                                subtitle: 'Este vídeo é mais do que uma apresentação de uma moto; é uma celebração da paixão por veículos. Com uma edição meticulosa e trilha sonora envolvente, levamos você a uma jornada visual que transcende a simples apresentação de uma moto. Cada take foi cuidadosamente selecionado para destacar os detalhes e a beleza singular da BMW R 1250 GS Adventure Premium Exclusive. A trilha sonora especialmente escolhida não apenas acompanha visualmente o vídeo, mas também amplifica a emoção de possuir e pilotar uma BMW R 1250 GS Adventure Premium Exclusivet.',
-                            },
-                            {
-                                subtitle: 'Este vídeo foi feito com captação e edição realizadas por mim, mostrando o resultado transformador alcançado por uma empresa de pintura de alto padrão no banheiro de um apartamento na Barra da Tijuca. Busquei tornar o vídeo dinâmico, com variações de ângulos, para uma apresentação mais impactante da obra.',
-                            },
-                            {
-                                subtitle: '"Assista ao trailer agora para uma prévia de um curta-metragem no qual eu realizei a captação de imagens e a direção de fotografia. Foquei em fazer takes dinâmicos, explorando diferentes ângulos e variando na intenção que eu quis que o telespectador sentisse. O curta-metragem completo está disponível para visualização no YouTube, proporcionando uma experiência completa. <a href="https://www.youtube.com/watch?v=JCcQpddQmDY&ab_channel=KoldrainFilm">https://www.youtube.com/watch?v=JCcQpddQmDY&ab_channel=KoldrainFilm</a>',
-                            },
-                        ]
+                        const lastElement = subtitleList[lastIndex];
+                        
                         return (
                             <div className='flex flex-col'>
                                 <div className="flex flex-row 2xsm:w-[320px] xsm:w-[300px] sm:w-[400px] md:w-[400px] lg:w-[1200px] items-start gap-16" key={id}>
                                     <div className="flex flex-col w-[500px]">
                                         <span className='text-gray-500 text-lg mb-3 font-bold font-sans'>
-                                            {s.filename}
+                                            {s.title}
                                         </span>
                                         <span className='text-gray-500 text-lg mb-3 font-bold font-serif'>
                                             {HTMLReactParser(subtitleList[i].subtitle)}
@@ -86,8 +90,8 @@ export default function MainView() {
                                 </div>
                                 {lastElement != s ? <hr className="border-1 w-full border-white mb-12 mt-12" /> : <div></div>}
                             </div>
-                            
-                        )
+
+                        );
                     })
                 }
 
