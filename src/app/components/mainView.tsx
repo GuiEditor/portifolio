@@ -48,10 +48,10 @@ export default function MainView() {
     return (
         <main>
             <section id='section1'>
-                <div className='flex flex-row items-center justify-around'>
+                <div className='flex flex-row items-start justify-around'>
                     <img className='w-screen 2xsm:h-[200px] lg:h-screen z-0' src={`${config.basePath}/foto_inicial.png`} />
                     <div className="absolute z-30 w-[700px] h-[400px] mr-20 flex flex-row right-1">
-                        <video className="w-full 2xsm:h-[120px] xsm:h-[120px] sm:h-[200px] md:h-[300px] shadow-xl rounded-xl bg-center bg-cover duration-500" controls autoPlay>
+                        <video className="2xsm:h-[220px] xsm:h-[220px] sm:h-[300px] md:h-[500px] shadow-xl rounded-xl bg-center bg-cover duration-500 ml-40 mt-40" controls autoPlay>
                             <source id='demo-video' src={demo} type="video/mp4"/>
                         </video>
                     </div>
@@ -73,7 +73,7 @@ export default function MainView() {
                             <div className='flex flex-col'>
                                 <div className="flex flex-row 2xsm:w-[320px] xsm:w-[300px] sm:w-[400px] md:w-[400px] lg:w-[1200px] items-start gap-16" key={id}>
                                     <div className="flex flex-col w-[500px]">
-                                        <span className='text-gray-500 text-lg mb-3 font-bold font-sans'>
+                                        <span className='text-white text-lg mb-3 font-sans'>
                                             {s.title}
                                         </span>
                                         <span className='text-gray-500 text-lg mb-3 font-bold font-serif'>
