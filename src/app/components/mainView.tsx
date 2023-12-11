@@ -50,13 +50,7 @@ export default function MainView() {
             <section id='section1'>
                 <div className='flex flex-row items-center justify-around'>
                     <img className='w-screen 2xsm:h-[200px] lg:h-screen z-0' src={`${config.basePath}/foto_inicial.png`} />
-                    <div className="absolute z-30 w-[800px] h-[400px] mr-20 flex flex-row right-1">
-                        <div className="flex flex-col mr-10">
-                            <span className='text-white font-sans '>Trabalho</span>
-                            <span className='text-white w-96 font-serif text-lg'>
-                                Este vídeo é mais do que uma apresentação de uma moto; é uma celebração da paixão por veículos. Com uma edição meticulosa e trilha sonora envolvente, levamos você a uma jornada visual que transcende a simples apresentação de uma moto. Cada take foi cuidadosamente selecionado para destacar os detalhes e a beleza singular da BMW R 1250 GS Adventure Premium Exclusive. A trilha sonora especialmente escolhida não apenas acompanha visualmente o vídeo, mas também amplifica a emoção de possuir e pilotar uma BMW R 1250 GS Adventure Premium Exclusivet.
-                            </span>
-                        </div>
+                    <div className="absolute z-30 w-[700px] h-[400px] mr-20 flex flex-row right-1">
                         <video className="w-full 2xsm:h-[120px] xsm:h-[120px] sm:h-[200px] md:h-[300px] shadow-xl rounded-xl bg-center bg-cover duration-500" controls autoPlay>
                             <source id='demo-video' src={demo} type="video/mp4"/>
                         </video>
