@@ -25,7 +25,7 @@ export default function Carousel({video}: Video) {
                     height="300px"
                 />
             </div> */}
-            <video className="w-full 2xsm:h-[120px] xsm:h-[120px] sm:h-[200px] md:h-[450px] shadow-xl rounded-xl bg-center bg-cover duration-500" controls>
+            <video className="w-full 2xsm:h-[220px] xsm:h-[220px] sm:h-[320px] md:h-[400px] lg:h-[400px] shadow-xl rounded-xl bg-center bg-cover duration-500" controls>
                 <source src={video} type="video/mp4"/>
             </video>
             {/* Seta para esquerda */}

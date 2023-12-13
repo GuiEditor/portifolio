@@ -49,9 +49,9 @@ export default function MainView() {
         <main>
             <section id='section1'>
                 <div className='flex flex-row items-start justify-around'>
-                    <img className='w-screen 2xsm:h-[200px] lg:h-screen z-0' src={`${config.basePath}/foto_inicial.png`} />
-                    <div className="absolute z-30 w-[700px] h-[400px] mr-20 flex flex-row right-1">
-                        <video className="2xsm:h-[220px] xsm:h-[220px] sm:h-[300px] md:h-[500px] shadow-xl rounded-xl bg-center bg-cover duration-500 ml-30 mt-40" controls autoPlay>
+                    <img className='w-screen 2xsm:h-[280px] lg:h-screen z-0' src={`${config.basePath}/foto_inicial.png`} />
+                    <div className="absolute 2xsm:h-[120px] z-30 lg:mr-36 2xsm:mr-8 xsm:mr-8 sm:mr-8 right-1">
+                        <video className="2xsm:h-[200px] xsm:h-[200px] sm:h-[200px] md:h-[500px] shadow-xl rounded-xl bg-center bg-cover duration-500 2xsm:mt-16 xsm:mt-16 lg:ml-30 lg:mt-40" controls autoPlay>
                             <source id='demo-video' src={demo} type="video/mp4"/>
                         </video>
                     </div>
@@ -65,24 +65,22 @@ export default function MainView() {
 
                 {
                     subtitleList?.map((s, i) => {
-                        const lastIndex = subtitleList.length - 1;
                         const id = i + 1;
-                        const lastElement = subtitleList[lastIndex];
                         
                         return (
                             <div className='flex flex-col'>
-                                <div className="flex flex-row 2xsm:w-[320px] xsm:w-[300px] sm:w-[400px] md:w-[400px] lg:w-[1200px] items-start gap-16" key={id}>
-                                    <div className="flex flex-col w-[500px]">
-                                        <span className='text-white text-lg mb-3 font-sans'>
+                                <div className="flex 2xsm:flex-col xsm:flex-col sm:flex-col md:flex-col lg:flex-row xl:flex-row 2xl:flex-row 2xsm:w-[320px] xsm:w-[300px] sm:w-[400px] md:w-[400px] lg:w-[1200px] items-start gap-16" key={id}>
+                                    <div className="flex flex-col">
+                                        <span className='text-white 2xsm:text-base xsm:text-base sm:text-base lg:text-lg mb-3 font-sans'>
                                             {s.title}
                                         </span>
-                                        <span className='text-gray-500 text-lg mb-3 font-bold font-serif'>
+                                        <span className='text-gray-500 2xsm:text-sm xsm:text-sm sm:text-sm md:text-sm lg:text-lg 2xsm:w-[300px] xsm:w-[300px] sm:w-[250px] md:w-[300px] lg:w-[400px] mb-3 font-bold font-serif'>
                                             {HTMLReactParser(subtitleList[i].subtitle)}
                                         </span>
                                     </div>
                                     <Carousel video={s.url}></Carousel>
                                 </div>
-                                {lastElement != s ? <hr className="border-1 w-full border-white mb-12 mt-12" /> : <div></div>}
+                                <hr className="border-1 w-full border-white mb-12 mt-12" />
                             </div>
 
                         );
@@ -91,21 +89,21 @@ export default function MainView() {
 
             </section>
 
-            <section className='bg-purpledeep flex flex-row items-start justify-center p-8' id="section4">
-                <img src={profile} className='w-64 h-64 rounded mr-6' />
+            <section className='bg-purpledeep flex flex-col items-center lg:flex-row xl:flex-row 2xl:flex-row lg:items-start xl:items-start 2xl:items-start justify-center p-8' id="section4">
+                <img src={profile} className='md:w-64 md:h-64 lg:h-64 lg:w-64 2xsm:h-40 2xsm:w-40 xsm:w-40 xsm:h-40 sm:w-40 sm:h-40 rounded mb-5 mr-6' />
 
                 <div className='flex flex-col items-start max-w-3xl'>
-                    <p className='text-3xl text-gray-300 font-sans'>
+                    <p className='2xsm:text-base xsm:text-base sm:text-base lg:text-3xl text-gray-300 font-sans'>
                         Guilherme Alcantara
                     </p>
 
-                    <p className='text-gray-400 text-start font-serif text-lg'>
+                    <p className='text-gray-400 text-start font-serif 2xsm:text-sm xsm:text-sm sm:text-sm md:text-sm lg:text-lg'>
                         Amante da MPB, espírito boêmio inquieto e detentor de um humor peculiar.
                     </p>
-                    <p className='text-gray-400 text-start font-serif text-lg'>
+                    <p className='text-gray-400 text-start font-serif 2xsm:text-sm xsm:text-sm sm:text-sm md:text-sm lg:text-lg'>
                         Minha verdadeira paixão é dar vida às histórias por meio de produções cinematográficas que impactam visualmente. Seja por meio da edição de vídeos ou das minhas filmagens, explorando diferentes ângulos de forma ousada, meu objetivo constante é ultrapassar as barreiras do possível, criando obras de arte que cativam o público e deixam uma impressão duradoura.
                     </p>
-                    <p className='text-gray-400 text-start font-serif text-lg'>
+                    <p className='text-gray-400 text-start font-serif 2xsm:text-sm xsm:text-sm sm:text-sm md:text-sm lg:text-lg'>
                         Sempre busco entregar o meu melhor, não apenas o possível. Isso é o que você procura?
                     </p>
                 </div>
@@ -114,7 +112,7 @@ export default function MainView() {
             <section className="bg-gray-950 flex flex-col items-center pb-8" id="section3">
 
                 <div className="border-b-2 p-7 mb-6">
-                    <span className="text-white text-2xl">Contato</span>
+                    <span className="text-white 2xsm:text-md xsm:text-md sm:text-md md:text-md text-2xl">Contato</span>
                 </div>
 
                 <div className='flex flex-row gap-8 bg-purpledeep p-8 mt-8 rounded shadow'>
